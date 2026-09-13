@@ -140,27 +140,42 @@
 
     .grid{display:grid;grid-template-columns:252px minmax(0,1fr) 316px;gap:20px;align-items:start;padding:24px 0 56px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-    .view-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .col-title{font-size:30px;line-height:1.12;font-weight:700;letter-spacing:-1.1px}
-    .col-title span{color:var(--brand-mid)}
     .seg{display:flex;gap:4px;background:#EDF3F1;border:1px solid var(--line);border-radius:11px;padding:4px}
     .seg button{display:flex;align-items:center;gap:8px;height:36px;padding:0 15px;border-radius:8px;font-size:13.5px;font-weight:500;color:var(--muted)}
     .seg button:hover{color:var(--ink)}
     .seg button.on{background:#fff;color:var(--brand-dark);font-weight:700;box-shadow:0 1px 3px rgba(13,43,42,.12)}
     .seg-sm{padding:3px;border-radius:9px}
     .seg-sm button{height:30px;padding:0 11px;font-size:12.5px;gap:6px}
-    .net-wrap{position:relative;padding:6px 10px 12px}
-    .net-wrap canvas{display:block;width:100%;border-radius:12px;background:
-      radial-gradient(circle at 50% 45%, #F5FBF9 0%, #FFFFFF 70%)}
-    .net-crumbs{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:4px 4px 10px}
-    .net-crumbs button{font-size:12.5px;color:var(--muted);padding:4px 9px;border-radius:7px;background:#F2F7F5}
-    .net-crumbs button:hover{color:var(--ink)}
-    .net-crumbs button.on{background:var(--brand-tint);color:var(--brand-dark);font-weight:700}
+    .net-wrap{position:relative;padding:14px 16px 14px}
+    .net-crumbs{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:2px 4px 12px}
+    .net-crumbs button{font-size:12.5px;color:var(--muted);padding:5px 11px;border-radius:8px;background:#F2F7F5;font-weight:500}
+    .net-crumbs button:hover{color:var(--ink);background:#E9F2EE}
+    .net-crumbs button.on{background:var(--brand);color:#fff;font-weight:700}
     .net-crumbs i{font-style:normal;color:var(--muted-2);font-size:13px}
-    .net-tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;border-radius:9px;padding:8px 11px;max-width:230px;box-shadow:var(--shadow-lg);z-index:5}
+    .net-count{margin-left:auto;font-size:12px;color:var(--muted-2)}
+    .net-pager{margin-left:auto;display:flex;align-items:center;gap:6px}
+    .net-pager em{font-style:normal;font-size:12px;color:var(--muted-2)}
+    .net-pager button{width:26px;height:26px;border-radius:7px;border:1px solid var(--line);background:#fff;
+      display:flex;align-items:center;justify-content:center;color:var(--ink-2)}
+    .net-pager button:disabled{opacity:.35;cursor:default}
+    .net-pager button:not(:disabled):hover{border-color:var(--brand);color:var(--brand)}
+    .net-stage{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line-soft);
+      background:radial-gradient(120% 90% at 54% 50%, #FFFFFF 0%, #F6FBF9 55%, #EFF6F4 100%)}
+    .net-stage canvas{display:block;width:100%;touch-action:none}
+    .net-tools{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:6px}
+    .net-tools button{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.92);border:1px solid var(--line);
+      color:var(--ink-2);font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 2px 6px rgba(13,43,42,.08)}
+    .net-tools button:hover{border-color:var(--brand);color:var(--brand)}
+    .net-tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;border-radius:10px;padding:9px 12px;
+      max-width:230px;box-shadow:var(--shadow-lg);z-index:5}
     .net-tip b{display:block;font-size:12.5px;font-weight:700;line-height:1.3}
-    .net-tip span{display:block;font-size:11px;opacity:.8;margin-top:2px}
-    .net-legend{font-size:12px;color:var(--muted);padding:10px 4px 2px;line-height:1.5}
+    .net-tip span{display:block;font-size:11px;opacity:.78;margin-top:2px}
+    .net-tip em{display:block;font-style:normal;font-size:10.5px;color:#8FE3C2;margin-top:5px}
+    .net-legend{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);padding:12px 4px 2px}
+    .net-key{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--ink-2)}
+    .net-key i{width:8px;height:8px;border-radius:50%;display:block}
+    .net-hint{margin-left:auto;color:var(--muted-2);font-size:11.5px}
     .col{display:flex;flex-direction:column;gap:18px}
     .col-side{align-self:stretch}
     .sticky{
@@ -195,7 +210,7 @@
     .dot-pin{background:var(--brand-mid);width:9px;height:9px;border-radius:50%;box-shadow:0 0 0 3px rgba(18,148,108,.25)}
     .leaflet-control-zoom a{border-radius:7px!important;color:var(--ink)!important;font-weight:500}
 
-    .results-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;border-bottom:1px solid var(--line-soft)}
+    .results-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:13px 14px;border-bottom:1px solid var(--line-soft)}
     .results-head h3{font-size:19px;font-weight:700;letter-spacing:-.4px}
     .results-head p{font-size:12.5px;color:var(--muted);margin-top:1px}
     .head-tools{display:flex;align-items:center;gap:12px}
@@ -376,7 +391,6 @@
       .stat:nth-child(3){border-left:none}
       .stat:nth-child(n+3){border-top:1px solid var(--line-soft)}
       .tpl-grid{grid-template-columns:1fr 1fr}
-      .col-title{font-size:24px;letter-spacing:-.8px}
       .table-scroll{overflow-x:auto}
       table{min-width:820px}
       .top-search{display:none}
@@ -687,303 +701,539 @@ Thanks again,
     };
 
     /* =========================================================
-       Network view — force-directed concept map
+       Network view — radial concept map
     ========================================================= */
+
     const NetworkGraph = ({ agencies, county, groupBy, selected, onToggle }) => {
       const wrapRef = useRef(null), canvasRef = useRef(null);
-      const simRef = useRef({ nodes:[], links:[], byId:{}, alpha:1 });
-      const dragRef = useRef(null), hoverRef = useRef(null), selRef = useRef(selected);
-      const [focus, setFocus] = useState(null);
-      const [subFocus, setSubFocus] = useState(null);
+      const simRef = useRef({ nodes:[], links:[], byId:{} });
+      const viewRef = useRef({ k:1, tx:0, ty:0 });
+      const hoverRef = useRef(null);
+      const dragRef = useRef(null);
+      const selRef = useRef(selected);
+      const [path, setPath] = useState([]);
+      const [leafPage, setLeafPage] = useState(0);
       const [tip, setTip] = useState(null);
-      const [size, setSize] = useState({ w:840, h:560 });
+      const [size, setSize] = useState({ w:860, h:600 });
+      const [, force] = useState(0);
 
       selRef.current = selected;
       const groupMode = groupBy === 'industry' ? 'industry' : 'county';
+      const leafRows = Math.max(6, Math.min(30, Math.floor((size.h - 70) / 25)));
+      const pageSize = leafRows * 2;
 
-      useEffect(() => { setFocus(null); setSubFocus(null); }, [groupMode]);
-
-      const hubLabel = county || (groupMode === 'industry' ? 'Industries' : 'All Ireland');
-
-      /* responsive canvas */
+      /* ---------- canvas sizing ---------- */
       useEffect(() => {
         if (!wrapRef.current) return;
-        const ro = new ResizeObserver(entries => {
-          const w = Math.max(320, entries[0].contentRect.width);
-          setSize(sz => Math.abs(sz.w - w) < 12 ? sz : { w, h:Math.max(480, Math.min(700, Math.round(window.innerHeight - 250))) });
+        const measure = (w) => setSize(sz => {
+          const h = Math.max(540, Math.min(760, Math.round(window.innerHeight - 240)));
+          return (Math.abs(sz.w - w) < 10 && sz.h === h) ? sz : { w:Math.max(320, w), h };
         });
+        const ro = new ResizeObserver(e => measure(e[0].contentRect.width));
         ro.observe(wrapRef.current);
         return () => ro.disconnect();
       }, []);
 
-      /* build the graph */
-      useEffect(() => {
-        const W = size.w, H = size.h, cx = W/2, cy = H/2;
-        const nodes = [], links = [];
-        nodes.push({ id:'hub', type:'hub', label:hubLabel, x:cx, y:cy, vx:0, vy:0, r:30 });
-
-        const groups = {};
+      /* ---------- data model ---------- */
+      const model = useMemo(() => {
+        const groups = new Map();
         agencies.forEach(a => {
           const k = groupMode === 'county'
             ? ((a.County || '').trim() || 'Unlisted')
             : (fieldsOf(a)[0] || 'General Recruitment');
-          (groups[k] = groups[k] || []).push(a);
+          if (!groups.has(k)) groups.set(k, []);
+          groups.get(k).push(a);
         });
-        const all = Object.entries(groups).sort((a,b) => b[1].length - a[1].length).slice(0, 14);
-        const openGroup = all.some(([n]) => n === focus) ? focus : null;
-        const top = openGroup ? all.filter(([n]) => n === openGroup) : all;
+        return [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
+      }, [agencies, groupMode]);
 
-        top.forEach(([name, list]) => {
-          const i = all.findIndex(([n]) => n === name);
-          const ang = openGroup ? -Math.PI / 2 + 0.0001 : (i / all.length) * Math.PI * 2 - Math.PI / 2;
-          const gid = 'g:' + name;
-          nodes.push({
-            id:gid, type:'group', label:name, count:list.length,
-            r:Math.max(14, Math.min(30, 9 + Math.sqrt(list.length) * 2.4)),
-            x:cx + Math.cos(ang) * 200, y:cy + Math.sin(ang) * 165, vx:0, vy:0
-          });
-          links.push({ s:'hub', t:gid, len:195, lvl:1 });
-          if (openGroup !== name) return;
+      useEffect(() => { setPath([]); viewRef.current = { k:1, tx:0, ty:0 }; }, [groupMode, county, model]);
+      useEffect(() => { setLeafPage(0); }, [path, pageSize]);
 
+      /* ---------- what the current level shows ---------- */
+      const view = useMemo(() => {
+        const hub = { label:county || (groupMode === 'industry' ? 'Industries' : 'All Ireland'), kind:'hub', count:agencies.length };
+        if (!path.length) {
+          return {
+            center:hub, ancestors:[], childKind:'cluster',
+            children:model.slice(0, 16).map(([name, list]) => ({ id:'c:' + name, label:name, count:list.length, kind:'cluster' }))
+          };
+        }
+        const entry = model.find(([n]) => n === path[0]);
+        const list = entry ? entry[1] : [];
+        if (path.length === 1) {
           if (groupMode === 'industry') {
-            const byCounty = {};
+            const byCounty = new Map();
             list.forEach(a => {
               const c = (a.County || '').trim() || 'Unlisted';
-              (byCounty[c] = byCounty[c] || []).push(a);
+              if (!byCounty.has(c)) byCounty.set(c, []);
+              byCounty.get(c).push(a);
             });
-            const allSubs = Object.entries(byCounty).sort((a,b) => b[1].length - a[1].length).slice(0, 12);
-            const openSub = allSubs.some(([n]) => n === subFocus) ? subFocus : null;
-            const subs = openSub ? allSubs.filter(([n]) => n === openSub) : allSubs;
-            subs.forEach(([cname, clist]) => {
-              const j = allSubs.findIndex(([n]) => n === cname);
-              const a2 = openSub ? ang : ang + (j - allSubs.length / 2) * 0.24;
-              const sid = 's:' + cname;
-              nodes.push({
-                id:sid, type:'sub', label:cname, count:clist.length,
-                r:Math.max(11, Math.min(22, 7 + Math.sqrt(clist.length) * 2.1)),
-                x:cx + Math.cos(a2) * 300, y:cy + Math.sin(a2) * 250, vx:0, vy:0
-              });
-              links.push({ s:gid, t:sid, len:120, lvl:2 });
-              if (openSub !== cname) return;
-
-              const shown = clist.slice(0, 60);
-              shown.forEach((a, k) => {
-                const a3 = a2 + (k - shown.length / 2) * 0.055;
-                nodes.push({
-                  id:'a:' + a._k, type:'agency', label:shortName(a), agency:a, r:7,
-                  x:cx + Math.cos(a3) * (400 + (k % 3) * 20), y:cy + Math.sin(a3) * (330 + (k % 3) * 18), vx:0, vy:0
-                });
-                links.push({ s:sid, t:'a:' + a._k, len:72, lvl:3 });
-              });
-            });
-          } else {
-            const shown = list.slice(0, 60);
-            shown.forEach((a, j) => {
-              const a2 = ang + (j - shown.length / 2) * 0.075;
-              nodes.push({
-                id:'a:' + a._k, type:'agency', label:shortName(a), agency:a, r:7,
-                x:cx + Math.cos(a2) * (300 + (j % 3) * 20), y:cy + Math.sin(a2) * (250 + (j % 3) * 18), vx:0, vy:0
-              });
-              links.push({ s:gid, t:'a:' + a._k, len:78, lvl:2 });
-            });
+            return {
+              center:{ label:path[0], kind:'cluster', count:list.length }, ancestors:[hub], childKind:'cluster',
+              children:[...byCounty.entries()].sort((a,b) => b[1].length - a[1].length).slice(0, 16)
+                .map(([name, l]) => ({ id:'c:' + name, label:name, count:l.length, kind:'cluster' }))
+            };
           }
-        });
+          const sortedList = [...list].sort((a, b) => shortName(a).localeCompare(shortName(b)));
+          return {
+            center:{ label:path[0], kind:'cluster', count:list.length }, ancestors:[hub], childKind:'agency',
+            total:list.length, from:leafPage * pageSize,
+            children:sortedList.slice(leafPage * pageSize, leafPage * pageSize + pageSize)
+              .map(a => ({ id:'a:' + a._k, label:shortName(a), agency:a, kind:'agency' }))
+          };
+        }
+        const sub = list.filter(a => ((a.County || '').trim() || 'Unlisted') === path[1])
+          .sort((a, b) => shortName(a).localeCompare(shortName(b)));
+        return {
+          center:{ label:path[1], kind:'cluster', count:sub.length },
+          ancestors:[hub, { label:path[0], kind:'cluster' }],
+          childKind:'agency', total:sub.length, from:leafPage * pageSize,
+          children:sub.slice(leafPage * pageSize, leafPage * pageSize + pageSize)
+            .map(a => ({ id:'a:' + a._k, label:shortName(a), agency:a, kind:'agency' }))
+        };
+      }, [model, path, groupMode, county, agencies.length, leafPage, pageSize]);
 
-        simRef.current = { nodes, links, byId:Object.fromEntries(nodes.map(n => [n.id, n])), alpha:1 };
-      }, [agencies, focus, subFocus, groupMode, county, size.w, size.h]);
+      /* ---------- radial layout ---------- */
+      useEffect(() => {
+        const W = size.w, H = size.h;
+        const cx = (view.childKind === 'agency' ? W * 0.5 : W * 0.52), cy = H * 0.5;
+        const minWH = Math.min(W, H);
+        const prev = simRef.current.byId || {};
+        const nodes = [], links = [];
+        const push = (n) => {
+          const old = prev[n.id];
+          nodes.push(Object.assign({
+            x:old ? old.x : (n.spawnX !== undefined ? n.spawnX : cx),
+            y:old ? old.y : (n.spawnY !== undefined ? n.spawnY : cy),
+            alpha:old ? old.alpha : 0, pinned:false
+          }, n));
+          return nodes[nodes.length - 1];
+        };
 
-      /* simulation + render */
+        push({ id:'center', kind:view.center.kind === 'hub' ? 'hub' : 'center',
+               label:view.center.label, count:view.center.count, r:view.center.kind === 'hub' ? 46 : 42, tx:cx, ty:cy });
+
+        if (view.childKind !== 'agency') {
+          view.ancestors.forEach((a, i) => {
+            push({ id:'anc:' + i, kind:'ancestor', label:a.label, r:15, depth:i,
+                   tx:W * 0.07 + i * Math.max(96, W * 0.13), ty:H * 0.10 });
+            links.push({ s:i === 0 ? null : 'anc:' + (i - 1), t:'anc:' + i, kind:'trail' });
+          });
+          if (view.ancestors.length) links.push({ s:'anc:' + (view.ancestors.length - 1), t:'center', kind:'trail' });
+        }
+
+        const ch = view.children;
+        const n = ch.length;
+        const total = ch.reduce((t, c) => t + (c.count || 1), 0) || 1;
+        const leaf = view.childKind === 'agency';
+        let ringsOut = [];
+
+        if (leaf) {
+          /* two balanced columns either side of the centre — labels stay horizontal */
+          const half = Math.ceil(n / 2);
+          const rightCount = n - half;
+          const spacing = Math.min(26, Math.max(17, (H - 64) / Math.max(half, rightCount, 1)));
+          const colX = Math.min(W * 0.27, 236);
+          ch.forEach((c, i) => {
+            const side = i < half ? -1 : 1;
+            const idx = i < half ? i : i - half;
+            const cnt = (i < half ? half : rightCount) || 1;
+            push({
+              id:c.id, kind:c.kind, label:c.label, agency:c.agency, r:7, side,
+              tx:cx + side * colX, ty:cy + (idx - (cnt - 1) / 2) * spacing
+            });
+            links.push({ s:'center', t:c.id, kind:'leaf', side });
+          });
+        } else {
+          const ringCount = n <= 12 ? 1 : n <= 32 ? 2 : 3;
+          const sizes = ch.map(c => Math.max(17, Math.min(34, 12 + Math.sqrt(c.count || 1) * 2.6)));
+          const maxNodeR = sizes.length ? Math.max.apply(null, sizes) : 10;
+          const padY = maxNodeR + 42;
+          const squash = 0.88;
+          const maxR = Math.max(105, Math.min(W * 0.44 - maxNodeR - 14, (H / 2 - padY) / squash));
+          const radii = ringCount === 1 ? [maxR * 0.9]
+            : ringCount === 2 ? [maxR * 0.60, maxR]
+            : [maxR * 0.46, maxR * 0.74, maxR];
+          const perRing = [];
+          for (let i = 0; i < ringCount; i++) perRing.push(0);
+          ch.forEach((_, i) => perRing[i % ringCount]++);
+          const cursor = perRing.map(() => 0);
+          ch.forEach((c, i) => {
+            const ring = i % ringCount;
+            const idx = cursor[ring]++;
+            const cnt = perRing[ring];
+            const offset = ring * 0.42 + (ringCount > 1 ? 0.18 : 0);
+            const ang = (idx / cnt) * Math.PI * 2 - Math.PI / 2 + offset;
+            const rad = radii[ring];
+            push({
+              id:c.id, kind:c.kind, label:c.label, count:c.count, agency:c.agency,
+              r:sizes[i], ang, share:(c.count || 0) / total,
+              tx:cx + Math.cos(ang) * rad, ty:cy + Math.sin(ang) * rad * squash
+            });
+            links.push({ s:'center', t:c.id, kind:'branch' });
+          });
+          ringsOut = radii.slice(0, ringCount);
+        }
+
+        simRef.current = {
+          nodes, links, byId:Object.fromEntries(nodes.map(x => [x.id, x])),
+          rings:ringsOut, cx, cy, leaf
+        };
+      }, [view, size.w, size.h]);
+
+      /* ---------- render loop ---------- */
       useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         const dpr = window.devicePixelRatio || 1;
-        const W = size.w, H = size.h, cx = W/2, cy = H/2;
+        const W = size.w, H = size.h;
         canvas.width = W * dpr; canvas.height = H * dpr;
         canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        let raf;
+        let raf, t0 = performance.now();
 
-        const tick = () => {
-          const S = simRef.current, { nodes, links, byId } = S;
-          if (S.alpha > 0.004) {
-            for (let i = 0; i < nodes.length; i++) {
-              for (let j = i + 1; j < nodes.length; j++) {
-                const a = nodes[i], b = nodes[j];
-                let dx = b.x - a.x, dy = b.y - a.y;
-                let d2 = dx*dx + dy*dy || 0.01, d = Math.sqrt(d2);
-                const rep = ((a.type === 'agency' && b.type === 'agency') ? 1500 : 3600) / d2;
-                const fx = dx / d * rep, fy = dy / d * rep;
-                a.vx -= fx; a.vy -= fy; b.vx += fx; b.vy += fy;
-              }
-            }
-            links.forEach(l => {
-              const a = byId[l.s], b = byId[l.t];
-              if (!a || !b) return;
-              const dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy) || 0.01;
-              const f = (d - l.len) * 0.014, fx = dx / d * f, fy = dy / d * f;
-              a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
-            });
-            nodes.forEach(n => {
-              if (n.id === 'hub') { n.x = cx; n.y = cy; n.vx = n.vy = 0; return; }
-              if (dragRef.current && dragRef.current.id === n.id) return;
-              n.vx += (cx - n.x) * 0.004; n.vy += (cy - n.y) * 0.004;
-              n.vx *= 0.86; n.vy *= 0.86;
-              n.x += n.vx; n.y += n.vy;
-              n.x = Math.max(n.r + 10, Math.min(W - n.r - 10, n.x));
-              n.y = Math.max(n.r + 10, Math.min(H - n.r - 10, n.y));
-            });
-            S.alpha *= 0.994;
-          }
+        const halo = (x, y, text, font, fill) => {
+          ctx.font = font;
+          const w = ctx.measureText(text).width;
+          ctx.fillStyle = 'rgba(255,255,255,.82)';
+          const pad = 5;
+          ctx.beginPath();
+          const rx = x - w/2 - pad, ry = y - 9, rw = w + pad*2, rh = 17, rr = 6;
+          ctx.moveTo(rx + rr, ry);
+          ctx.arcTo(rx + rw, ry, rx + rw, ry + rh, rr);
+          ctx.arcTo(rx + rw, ry + rh, rx, ry + rh, rr);
+          ctx.arcTo(rx, ry + rh, rx, ry, rr);
+          ctx.arcTo(rx, ry, rx + rw, ry, rr);
+          ctx.fill();
+          ctx.fillStyle = fill;
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          ctx.fillText(text, x, y);
+        };
+        const clip = (str, max) => str.length > max ? str.slice(0, max - 1) + '…' : str;
 
+        const frame = (now) => {
+          const S = simRef.current;
+          const { nodes, links, byId } = S;
+          const v = viewRef.current;
+          const t = (now - t0) / 1000;
+
+          nodes.forEach(n => {
+            if (!n.pinned) { n.x += (n.tx - n.x) * 0.16; n.y += (n.ty - n.y) * 0.16; }
+            n.alpha += (1 - n.alpha) * 0.12;
+          });
+
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
           ctx.clearRect(0, 0, W, H);
-          links.forEach(l => {
-            const a = S.byId[l.s], b = S.byId[l.t];
-            if (!a || !b) return;
+          ctx.save();
+          ctx.translate(v.tx, v.ty); ctx.scale(v.k, v.k);
+
+          /* orbit guides */
+          (S.rings || []).forEach((r, i) => {
             ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            const mx = (a.x + b.x) / 2 + (b.y - a.y) * 0.08, my = (a.y + b.y) / 2 - (b.x - a.x) * 0.08;
-            ctx.quadraticCurveTo(mx, my, b.x, b.y);
-            ctx.strokeStyle = l.lvl === 1 ? 'rgba(11,123,91,.34)' : l.lvl === 2 ? 'rgba(18,148,108,.26)' : 'rgba(18,148,108,.17)';
-            ctx.lineWidth = l.lvl === 1 ? 1.6 : l.lvl === 2 ? 1.2 : 1;
-            ctx.stroke();
+            ctx.ellipse(S.cx, S.cy, r, r * 0.88, 0, 0, 6.284);
+            ctx.strokeStyle = 'rgba(11,123,91,' + (0.09 - i * 0.022) + ')';
+            ctx.lineWidth = 1; ctx.setLineDash([4, 7]); ctx.stroke(); ctx.setLineDash([]);
           });
 
           const hov = hoverRef.current;
-          nodes.forEach(n => {
-            const isHov = hov === n.id;
-            if (n.type === 'hub') {
-              ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.284);
-              ctx.fillStyle = '#0B7B5B'; ctx.fill();
-              ctx.fillStyle = '#fff'; ctx.font = '700 12px DM Sans, sans-serif';
-              ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-              ctx.fillText(n.label.length > 11 ? n.label.slice(0, 10) + '…' : n.label, n.x, n.y);
-            } else if (n.type === 'group') {
-              const open = focus === n.label;
-              ctx.beginPath(); ctx.arc(n.x, n.y, n.r + (isHov ? 2 : 0), 0, 6.284);
-              ctx.fillStyle = open ? '#0B7B5B' : '#D9F0E6';
-              ctx.fill();
-              ctx.lineWidth = 2; ctx.strokeStyle = open ? '#075E45' : '#8FCDB6'; ctx.stroke();
-              ctx.fillStyle = open ? '#fff' : '#0B6B4F';
-              ctx.font = '700 11px DM Sans, sans-serif';
-              ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-              ctx.fillText(String(n.count), n.x, n.y);
-              ctx.fillStyle = '#0D2B2A'; ctx.font = '600 12px DM Sans, sans-serif';
-              ctx.fillText(n.label.length > 18 ? n.label.slice(0, 17) + '…' : n.label, n.x, n.y + n.r + 13);
-            } else if (n.type === 'sub') {
-              const open = subFocus === n.label;
-              ctx.beginPath(); ctx.arc(n.x, n.y, n.r + (isHov ? 2 : 0), 0, 6.284);
-              ctx.fillStyle = open ? '#12946C' : '#EDF7F2';
-              ctx.fill();
-              ctx.lineWidth = 1.8; ctx.strokeStyle = open ? '#0B7B5B' : '#A7D8C4'; ctx.stroke();
-              ctx.fillStyle = open ? '#fff' : '#3C7A62';
-              ctx.font = '700 10px DM Sans, sans-serif';
-              ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-              ctx.fillText(String(n.count), n.x, n.y);
-              ctx.fillStyle = '#3F5B58'; ctx.font = '500 11px DM Sans, sans-serif';
-              ctx.fillText(n.label.length > 16 ? n.label.slice(0, 15) + '…' : n.label, n.x, n.y + n.r + 11);
+          const dim = hov ? 0.30 : 1;
+
+          /* links */
+          links.forEach(l => {
+            const b = byId[l.t];
+            const a = l.s ? byId[l.s] : null;
+            if (!b) return;
+            const from = a || { x:b.x - 40, y:b.y };
+            const lit = hov && (hov === l.t || hov === l.s);
+            ctx.beginPath();
+            if (l.kind === 'leaf' && l.side) {
+              const sx = from.x + l.side * (from.r || 30) * 0.9, sy = from.y;
+              const ex = b.x - l.side * (b.r + 2);
+              ctx.moveTo(sx, sy);
+              ctx.bezierCurveTo(sx + l.side * 70, sy, ex - l.side * 80, b.y, ex, b.y);
             } else {
-              const on = selRef.current.includes(n.agency._k);
-              ctx.beginPath(); ctx.arc(n.x, n.y, n.r + (isHov ? 2.5 : 0), 0, 6.284);
-              ctx.fillStyle = on ? '#12946C' : '#fff';
-              ctx.fill();
-              ctx.lineWidth = 2; ctx.strokeStyle = on ? '#075E45' : QUALITY_DOT[qualityOf(n.agency).key];
-              ctx.stroke();
-              if (isHov) {
-                ctx.fillStyle = '#0D2B2A'; ctx.font = '600 11.5px DM Sans, sans-serif';
-                ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-                ctx.fillText(n.label.length > 26 ? n.label.slice(0, 25) + '…' : n.label, n.x, n.y - 16);
-              }
+              ctx.moveTo(from.x, from.y);
+              const mx = (from.x + b.x) / 2 + (b.y - from.y) * 0.14;
+              const my = (from.y + b.y) / 2 - (b.x - from.x) * 0.14;
+              ctx.quadraticCurveTo(mx, my, b.x, b.y);
             }
+            if (l.kind === 'trail') {
+              ctx.setLineDash([3, 6]);
+              ctx.strokeStyle = 'rgba(100,124,130,' + (0.5 * (hov ? dim : 1)) + ')';
+              ctx.lineWidth = 1.2;
+            } else {
+              const g = ctx.createLinearGradient(from.x, from.y, b.x, b.y);
+              const op = (lit ? 0.85 : 0.34 * (hov ? dim : 1)) * b.alpha;
+              g.addColorStop(0, 'rgba(11,123,91,' + op + ')');
+              g.addColorStop(1, 'rgba(18,148,108,' + (op * 0.5) + ')');
+              ctx.strokeStyle = g;
+              ctx.lineWidth = l.kind === 'branch' ? (lit ? 2.4 : 1.5) : (lit ? 2 : 1.1);
+            }
+            ctx.stroke();
+            ctx.setLineDash([]);
           });
 
-          raf = requestAnimationFrame(tick);
-        };
-        tick();
-        return () => cancelAnimationFrame(raf);
-      }, [size.w, size.h, focus, subFocus]);
+          /* nodes */
+          nodes.forEach(n => {
+            const lit = hov === n.id;
+            const fade = hov && !lit ? dim : 1;
+            const A = n.alpha * fade;
+            const r = n.r * (lit ? 1.09 : 1);
 
-      /* pointer handling */
+            if (n.kind === 'hub' || n.kind === 'center') {
+              const pulse = 1 + Math.sin(t * 1.6) * 0.02;
+              ctx.beginPath(); ctx.arc(n.x, n.y, r * 1.55 * pulse, 0, 6.284);
+              ctx.fillStyle = 'rgba(11,123,91,.07)'; ctx.fill();
+              ctx.beginPath(); ctx.arc(n.x, n.y, r * 1.22, 0, 6.284);
+              ctx.fillStyle = 'rgba(11,123,91,.10)'; ctx.fill();
+              ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, 6.284);
+              ctx.fillStyle = '#0B7B5B'; ctx.fill();
+              ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+              ctx.font = '700 13px DM Sans, sans-serif';
+              const maxW = r * 2 - 18;
+              const words = n.label.split(' ');
+              let lines = [n.label];
+              if (ctx.measureText(n.label).width > maxW && words.length > 1) {
+                const half = Math.ceil(words.length / 2);
+                lines = [words.slice(0, half).join(' '), words.slice(half).join(' ')];
+              }
+              const fits = lines.every(l => ctx.measureText(l).width <= maxW);
+              if (fits) {
+                ctx.fillStyle = '#fff';
+                lines.forEach((l, i) => ctx.fillText(l, n.x, n.y - (lines.length > 1 ? 9 - i * 16 : 5)));
+                ctx.font = '500 10.5px DM Sans, sans-serif';
+                ctx.fillStyle = 'rgba(255,255,255,.75)';
+                ctx.fillText(n.count + ' agencies', n.x, n.y + (lines.length > 1 ? 20 : 11));
+              } else {
+                ctx.fillStyle = '#fff';
+                ctx.font = '700 19px DM Sans, sans-serif';
+                ctx.fillText(String(n.count), n.x, n.y - 5);
+                ctx.font = '500 10.5px DM Sans, sans-serif';
+                ctx.fillStyle = 'rgba(255,255,255,.75)';
+                ctx.fillText('agencies', n.x, n.y + 12);
+                halo(n.x, n.y + r + 20, clip(n.label, 26), '700 13px DM Sans, sans-serif', '#0D2B2A');
+              }
+              return;
+            }
+
+            if (n.kind === 'ancestor') {
+              ctx.globalAlpha = A * 0.9;
+              ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, 6.284);
+              ctx.fillStyle = lit ? '#0B7B5B' : '#E3F1EB'; ctx.fill();
+              ctx.lineWidth = 1.6; ctx.strokeStyle = '#B4D8C6'; ctx.stroke();
+              ctx.fillStyle = '#4A6B66'; ctx.font = '500 11px DM Sans, sans-serif';
+              ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+              ctx.fillText(clip(n.label, 14), n.x, n.y + r + 12);
+              ctx.globalAlpha = 1;
+              return;
+            }
+
+            if (n.kind === 'cluster') {
+              ctx.globalAlpha = A;
+              ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, 6.284);
+              ctx.fillStyle = lit ? '#0B7B5B' : '#FFFFFF'; ctx.fill();
+              ctx.lineWidth = 1.6; ctx.strokeStyle = lit ? '#075E45' : '#CFE7DC'; ctx.stroke();
+              /* share gauge */
+              ctx.beginPath(); ctx.arc(n.x, n.y, r + 5, 0, 6.284);
+              ctx.strokeStyle = 'rgba(11,123,91,.10)'; ctx.lineWidth = 3; ctx.stroke();
+              ctx.beginPath();
+              ctx.arc(n.x, n.y, r + 5, -Math.PI/2, -Math.PI/2 + Math.max(0.16, n.share * 6.284));
+              ctx.strokeStyle = lit ? '#0B7B5B' : 'rgba(11,123,91,.6)';
+              ctx.lineWidth = 3; ctx.lineCap = 'round'; ctx.stroke(); ctx.lineCap = 'butt';
+              ctx.fillStyle = lit ? '#fff' : '#0B6B4F';
+              ctx.font = '700 13px DM Sans, sans-serif';
+              ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+              ctx.fillText(String(n.count), n.x, n.y);
+              halo(n.x, n.y + r + 20, clip(n.label, 18), '600 12px DM Sans, sans-serif', '#0D2B2A');
+              ctx.globalAlpha = 1;
+              return;
+            }
+
+            /* agency */
+            const on = selRef.current.includes(n.agency._k);
+            const q = qualityOf(n.agency);
+            ctx.globalAlpha = A;
+            if (on) {
+              ctx.beginPath(); ctx.arc(n.x, n.y, r + 5, 0, 6.284);
+              ctx.fillStyle = 'rgba(11,123,91,.14)'; ctx.fill();
+            }
+            ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, 6.284);
+            ctx.fillStyle = on ? '#0B7B5B' : '#fff'; ctx.fill();
+            ctx.lineWidth = 2.2; ctx.strokeStyle = on ? '#075E45' : QUALITY_DOT[q.key]; ctx.stroke();
+            if (on) {
+              ctx.beginPath();
+              ctx.moveTo(n.x - 3.2, n.y); ctx.lineTo(n.x - 0.8, n.y + 2.6); ctx.lineTo(n.x + 3.4, n.y - 2.6);
+              ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.8; ctx.lineCap = 'round'; ctx.stroke(); ctx.lineCap = 'butt';
+            }
+            const side = n.side || 1;
+            ctx.font = (lit || on ? '700 ' : '500 ') + '11.5px DM Sans, sans-serif';
+            ctx.fillStyle = lit ? '#0D2B2A' : on ? '#0B6B4F' : '#4A6B66';
+            ctx.textAlign = side < 0 ? 'right' : 'left';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(clip(n.label, lit ? 34 : 26), n.x + side * (r + 9), n.y);
+            ctx.textAlign = 'center';
+            ctx.globalAlpha = 1;
+          });
+
+          ctx.restore();
+          raf = requestAnimationFrame(frame);
+        };
+        raf = requestAnimationFrame(frame);
+        return () => cancelAnimationFrame(raf);
+      }, [size.w, size.h]);
+
+      /* ---------- pointer ---------- */
+      const toWorld = (e) => {
+        const r = canvasRef.current.getBoundingClientRect();
+        const v = viewRef.current;
+        return { x:(e.clientX - r.left - v.tx) / v.k, y:(e.clientY - r.top - v.ty) / v.k,
+                 sx:e.clientX - r.left, sy:e.clientY - r.top };
+      };
       const nodeAt = (x, y) => {
         const { nodes } = simRef.current;
         for (let i = nodes.length - 1; i >= 0; i--) {
           const n = nodes[i];
-          if (Math.hypot(n.x - x, n.y - y) <= n.r + 6) return n;
+          if (Math.hypot(n.x - x, n.y - y) <= n.r + 7) return n;
         }
         return null;
       };
-      const pos = (e) => {
-        const r = canvasRef.current.getBoundingClientRect();
-        return { x:e.clientX - r.left, y:e.clientY - r.top };
-      };
       const onMove = (e) => {
-        const { x, y } = pos(e);
-        if (dragRef.current) {
-          const n = simRef.current.byId[dragRef.current.id];
-          if (n) { n.x = x; n.y = y; n.vx = n.vy = 0; }
-          dragRef.current.moved = true;
-          simRef.current.alpha = Math.max(simRef.current.alpha, 0.4);
-          return;
+        const pt = toWorld(e);
+        const d = dragRef.current;
+        if (d && d.node) {
+          const n = simRef.current.byId[d.node];
+          if (n) { n.x = n.tx = pt.x; n.y = n.ty = pt.y; n.pinned = true; }
+          d.moved = true; return;
         }
-        const n = nodeAt(x, y);
+        if (d && d.pan) {
+          viewRef.current.tx = d.tx0 + (e.clientX - d.x0);
+          viewRef.current.ty = d.ty0 + (e.clientY - d.y0);
+          d.moved = true; return;
+        }
+        const n = nodeAt(pt.x, pt.y);
         hoverRef.current = n ? n.id : null;
-        canvasRef.current.style.cursor = n ? 'pointer' : 'default';
-        if (n && n.type === 'agency') {
+        canvasRef.current.style.cursor = n ? 'pointer' : 'grab';
+        if (!n) return setTip(null);
+        if (n.kind === 'agency') {
           const q = qualityOf(n.agency);
-          setTip({ x, y, name:shortName(n.agency), sub:(n.agency.County || '') + ' · ' + (q.key === 'none' ? 'no email' : q.label.toLowerCase() + ' quality email') });
-        } else if (n && (n.type === 'group' || n.type === 'sub')) {
-          const opened = n.type === 'group' ? focus === n.label : subFocus === n.label;
-          setTip({ x, y, name:n.label, sub:n.count + ' agencies · click to ' + (opened ? 'close' : 'open') });
-        } else setTip(null);
+          const on = selRef.current.includes(n.agency._k);
+          setTip({ x:pt.sx, y:pt.sy, name:shortName(n.agency),
+                   sub:(n.agency.County || '') + ' · ' + (q.key === 'none' ? 'no email on file' : q.label.toLowerCase() + ' quality email'),
+                   hint:on ? 'Click to remove from your list' : 'Click to add to your outreach list' });
+        } else if (n.kind === 'cluster') {
+          setTip({ x:pt.sx, y:pt.sy, name:n.label, sub:n.count + ' agencies', hint:'Click to open' });
+        } else if (n.kind === 'ancestor') {
+          setTip({ x:pt.sx, y:pt.sy, name:n.label, sub:'', hint:'Click to go back' });
+        } else if (n.kind === 'center' || n.kind === 'hub') {
+          setTip({ x:pt.sx, y:pt.sy, name:n.label, sub:n.count + ' agencies', hint:path.length ? 'Click to go back' : '' });
+        }
       };
       const onDown = (e) => {
-        const { x, y } = pos(e);
-        const n = nodeAt(x, y);
-        if (n && n.id !== 'hub') dragRef.current = { id:n.id, moved:false };
+        const pt = toWorld(e);
+        const n = nodeAt(pt.x, pt.y);
+        dragRef.current = n
+          ? { node:n.id, moved:false }
+          : { pan:true, x0:e.clientX, y0:e.clientY, tx0:viewRef.current.tx, ty0:viewRef.current.ty, moved:false };
       };
       const onUp = (e) => {
         const d = dragRef.current;
         dragRef.current = null;
-        const { x, y } = pos(e);
-        const n = nodeAt(x, y);
-        if (!n || (d && d.moved)) return;
-        if (n.type === 'group') { setSubFocus(null); setFocus(f => f === n.label ? null : n.label); }
-        else if (n.type === 'sub') setSubFocus(f => f === n.label ? null : n.label);
-        else if (n.type === 'agency') onToggle(n.agency._k);
-        else { setFocus(null); setSubFocus(null); }
-        simRef.current.alpha = 1;
+        if (!d || d.moved) return;
+        const pt = toWorld(e);
+        const n = nodeAt(pt.x, pt.y);
+        if (!n) return;
+        if (n.kind === 'cluster') setPath(p => [...p, n.label]);
+        else if (n.kind === 'agency') onToggle(n.agency._k);
+        else if (n.kind === 'ancestor') setPath(p => p.slice(0, n.depth));
+        else if (n.kind === 'center') setPath(p => p.slice(0, -1));
+      };
+      const onWheel = (e) => {
+        e.preventDefault();
+        const r = canvasRef.current.getBoundingClientRect();
+        const v = viewRef.current;
+        const k = Math.max(0.55, Math.min(2.6, v.k * Math.exp(-e.deltaY * 0.0014)));
+        const mx = e.clientX - r.left, my = e.clientY - r.top;
+        v.tx = mx - (mx - v.tx) * (k / v.k);
+        v.ty = my - (my - v.ty) * (k / v.k);
+        v.k = k;
+      };
+      const zoom = (f) => {
+        const v = viewRef.current;
+        const k = Math.max(0.55, Math.min(2.6, v.k * f));
+        const mx = size.w / 2, my = size.h / 2;
+        v.tx = mx - (mx - v.tx) * (k / v.k);
+        v.ty = my - (my - v.ty) * (k / v.k);
+        v.k = k; force(x => x + 1);
+      };
+      const resetView = () => {
+        viewRef.current = { k:1, tx:0, ty:0 };
+        simRef.current.nodes.forEach(n => { n.pinned = false; });
+        force(x => x + 1);
       };
 
-      const groupCount = simRef.current.nodes.filter(n => n.type === 'group').length;
+      useEffect(() => {
+        const onKey = (e) => { if (e.key === 'Escape' && path.length) setPath(p => p.slice(0, -1)); };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+      }, [path.length]);
+
+      const crumbs = [view.center.kind === 'hub' ? view.center.label : (county || (groupMode === 'industry' ? 'Industries' : 'All Ireland')), ...path];
 
       return (
         <div className="net-wrap" ref={wrapRef}>
           <div className="net-crumbs">
-            <button className={!focus ? 'on' : ''} onClick={() => { setFocus(null); setSubFocus(null); }}>{hubLabel}</button>
-            {focus && <>
-              <i>›</i>
-              <button className={!subFocus ? 'on' : ''} onClick={() => setSubFocus(null)}>{focus}</button>
-            </>}
-            {focus && subFocus && <>
-              <i>›</i>
-              <button className="on" onClick={() => {}}>{subFocus}</button>
-            </>}
+            {crumbs.map((c, i) => (
+              <React.Fragment key={c + i}>
+                {i > 0 && <i>›</i>}
+                <button className={i === crumbs.length - 1 ? 'on' : ''} onClick={() => setPath(p => p.slice(0, i))}>{c}</button>
+              </React.Fragment>
+            ))}
+            {view.childKind === 'agency' && view.total > pageSize ? (
+              <span className="net-pager">
+                <button onClick={() => setLeafPage(x => Math.max(0, x - 1))} disabled={leafPage === 0} aria-label="Previous agencies">{I.chevL()}</button>
+                <em>{view.from + 1}–{view.from + view.children.length} of {view.total}</em>
+                <button onClick={() => setLeafPage(x => x + 1)} disabled={view.from + view.children.length >= view.total} aria-label="More agencies">{I.chevR({s:15})}</button>
+              </span>
+            ) : (
+              <span className="net-count">
+                {view.childKind === 'agency'
+                  ? view.children.length + ' agencies'
+                  : view.children.length + (groupMode === 'industry' && !path.length ? ' industries' : ' counties')}
+              </span>
+            )}
           </div>
-          <canvas
-            ref={canvasRef}
-            onMouseMove={onMove} onMouseDown={onDown} onMouseUp={onUp}
-            onMouseLeave={() => { dragRef.current = null; hoverRef.current = null; setTip(null); }}
-          />
-          {tip && (
-            <div className="net-tip" style={{ left:Math.min(size.w - 180, tip.x + 14), top:Math.max(0, tip.y - 46) }}>
-              <b>{tip.name}</b><span>{tip.sub}</span>
+
+          <div className="net-stage">
+            <canvas
+              ref={canvasRef}
+              onMouseMove={onMove} onMouseDown={onDown} onMouseUp={onUp} onWheel={onWheel}
+              onMouseLeave={() => { dragRef.current = null; hoverRef.current = null; setTip(null); }}
+            />
+            <div className="net-tools">
+              <button onClick={() => zoom(1.25)} aria-label="Zoom in">+</button>
+              <button onClick={() => zoom(0.8)} aria-label="Zoom out">−</button>
+              <button onClick={resetView} aria-label="Reset view" title="Reset view">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 9a8 8 0 0 1 13.5-3.5L20 8"/><path d="M20 4v4h-4"/><path d="M20 15a8 8 0 0 1-13.5 3.5L4 16"/><path d="M4 20v-4h4"/></svg>
+              </button>
             </div>
-          )}
+            {tip && (
+              <div className="net-tip" style={{ left:Math.min(size.w - 200, tip.x + 16), top:Math.max(4, tip.y - 54) }}>
+                <b>{tip.name}</b>
+                {tip.sub && <span>{tip.sub}</span>}
+                {tip.hint && <em>{tip.hint}</em>}
+              </div>
+            )}
+          </div>
+
           <div className="net-legend">
-            {groupMode === 'industry'
-              ? <>Industry → county → agency · {groupCount} industries · click an industry to see the counties it covers, then a county to reach its agencies.</>
-              : <>County → agency · {groupCount} counties · click a county to open the agencies inside.</>}
-            {' '}Click an agency to add it to your outreach list, and drag any node to rearrange the map.
+            <span className="net-key"><i style={{background:QUALITY_DOT.high}}></i>High</span>
+            <span className="net-key"><i style={{background:QUALITY_DOT.good}}></i>Good</span>
+            <span className="net-key"><i style={{background:QUALITY_DOT.medium}}></i>Medium</span>
+            <span className="net-key"><i style={{background:QUALITY_DOT.none}}></i>No email</span>
+            <span className="net-hint">
+              {groupMode === 'industry' ? 'Industry → county → agency' : 'County → agency'} · click to drill in, Esc to go back · scroll to zoom, drag the background to pan
+            </span>
           </div>
         </div>
       );
@@ -1724,24 +1974,16 @@ Galway;Celtic Careers;;Galway;EA3789;0919876543;info@celticcareers.ie;https://ce
 
                 {/* Results + templates */}
                 <div className="col">
-                  <div className="view-bar">
-                    <h2 className="col-title">Find the right <span>recruitment partners.</span></h2>
-                    <div className="seg">
-                      <button className={viewMode === 'list' ? 'on' : ''} onClick={() => setViewMode('list')} aria-pressed={viewMode === 'list'}>
-                        {I.list({s:16})} List
-                      </button>
-                      <button className={viewMode === 'map' ? 'on' : ''} onClick={() => setViewMode('map')} aria-pressed={viewMode === 'map'}>
-                        {I.nodes({s:16})} Network
-                      </button>
-                    </div>
-                  </div>
-
                   {viewMode === 'map' ? (
                   <section className="card" id="results" data-tour="results">
                     <div className="results-head">
-                      <div>
-                        <h3>{sorted.length} Agencies</h3>
-                        <p>Open a cluster to reach the agencies inside</p>
+                      <div className="seg">
+                        <button className={viewMode === 'list' ? 'on' : ''} onClick={() => setViewMode('list')} aria-pressed={viewMode === 'list'}>
+                          {I.list({s:16})} List
+                        </button>
+                        <button className={viewMode === 'map' ? 'on' : ''} onClick={() => setViewMode('map')} aria-pressed={viewMode === 'map'}>
+                          {I.nodes({s:16})} Network
+                        </button>
                       </div>
                       <div className="head-tools">
                         <span className="sort-lbl">Group by</span>
@@ -1760,9 +2002,13 @@ Galway;Celtic Careers;;Galway;EA3789;0919876543;info@celticcareers.ie;https://ce
                   ) : (
                   <section className="card" id="results" data-tour="results">
                     <div className="results-head">
-                      <div>
-                        <h3>{sorted.length} Agencies</h3>
-                        <p>{county || industry || dTerm || hasEmail || hasPhone || hasWebsite ? 'Filtered from ' + data.total + ' agencies' : 'Showing all agencies'}</p>
+                      <div className="seg">
+                        <button className={viewMode === 'list' ? 'on' : ''} onClick={() => setViewMode('list')} aria-pressed={viewMode === 'list'}>
+                          {I.list({s:16})} List
+                        </button>
+                        <button className={viewMode === 'map' ? 'on' : ''} onClick={() => setViewMode('map')} aria-pressed={viewMode === 'map'}>
+                          {I.nodes({s:16})} Network
+                        </button>
                       </div>
                       <div className="head-tools">
                         <span className="sort-lbl">Sort by</span>
